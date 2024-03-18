@@ -1,0 +1,439 @@
+Program.Sub.ScreenSU.Start
+Gui.F_PreProc..Create
+Gui.F_PreProc..Size(6945,7950)
+Gui.F_PreProc..MinX(6945)
+Gui.F_PreProc..MinY(7950)
+Gui.F_PreProc..Position(0,0)
+Gui.F_PreProc..BackColor(-2147483633)
+Gui.F_PreProc..MousePointer(0)
+Gui.F_PreProc..Event(UnLoad,Unload)
+Gui.F_PreProc..Caption("SALES ANALYSIS BY CUSTOMER")
+Gui.F_PreProc.cmdOK.Create(Button)
+Gui.F_PreProc.cmdOK.Size(1200,375)
+Gui.F_PreProc.cmdOK.Position(5205,6645)
+Gui.F_PreProc.cmdOK.Caption("OK")
+Gui.F_PreProc.cmdOK.Event(Click,OkieDokie)
+Gui.F_PreProc.lbl1.Create(Label,"Select Customer Range",True,2145,255,0,315,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl2.Create(Label,"Period Total Date Range",True,2880,255,0,315,1785,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl3.Create(Label,"Year to Period Totals Date Range",True,3375,255,0,315,2985,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl4.Create(Label,"Prior year to Period Totals Date Range",True,4905,255,0,315,4185,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl5.Create(Label,"Prior Year to Year to Period Totals Date Range",True,4830,255,0,315,5385,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.dtp1From.Create(DatePicker)
+Gui.F_PreProc.dtp1From.Size(1935,285)
+Gui.F_PreProc.dtp1From.Position(690,2310)
+Gui.F_PreProc.dtp2From.Create(DatePicker)
+Gui.F_PreProc.dtp2From.Size(1935,285)
+Gui.F_PreProc.dtp2From.Position(690,3510)
+Gui.F_PreProc.dtp3From.Create(DatePicker)
+Gui.F_PreProc.dtp3From.Size(1935,285)
+Gui.F_PreProc.dtp3From.Position(690,4710)
+Gui.F_PreProc.dtp4From.Create(DatePicker)
+Gui.F_PreProc.dtp4From.Size(1935,285)
+Gui.F_PreProc.dtp4From.Position(690,5910)
+Gui.F_PreProc.dtp4To.Create(DatePicker)
+Gui.F_PreProc.dtp4To.Size(1935,285)
+Gui.F_PreProc.dtp4To.Position(3360,5910)
+Gui.F_PreProc.dtp3To.Create(DatePicker)
+Gui.F_PreProc.dtp3To.Size(1935,285)
+Gui.F_PreProc.dtp3To.Position(3360,4710)
+Gui.F_PreProc.dtp2To.Create(DatePicker)
+Gui.F_PreProc.dtp2To.Size(1935,285)
+Gui.F_PreProc.dtp2To.Position(3360,3510)
+Gui.F_PreProc.dtp1To.Create(DatePicker)
+Gui.F_PreProc.dtp1To.Size(1935,285)
+Gui.F_PreProc.dtp1To.Position(3360,2310)
+Gui.F_PreProc.txtFromCust.Create(TextBox,"",True,1215,300,0,690,765,True,0,"Arial",8,-2147483643,1)
+Gui.F_PreProc.txtToCust.Create(TextBox,"",True,1215,300,0,2865,765,True,0,"Arial",8,-2147483643,1)
+Gui.F_PreProc.cmdFromCust.Create(Button)
+Gui.F_PreProc.cmdFromCust.Size(375,375)
+Gui.F_PreProc.cmdFromCust.Position(1980,750)
+Gui.F_PreProc.cmdFromCust.Caption("^")
+Gui.F_PreProc.cmdFromCust.Event(Click,CustomerBrowser)
+Gui.F_PreProc.cmdToCust.Create(Button)
+Gui.F_PreProc.cmdToCust.Size(375,375)
+Gui.F_PreProc.cmdToCust.Position(4185,750)
+Gui.F_PreProc.cmdToCust.Caption("^")
+Gui.F_PreProc.cmdToCust.Event(Click,CustomerBrowser)
+Gui.F_PreProc.chkCust.Create(CheckBox)
+Gui.F_PreProc.chkCust.Size(1560,360)
+Gui.F_PreProc.chkCust.Position(705,1125)
+Gui.F_PreProc.chkCust.Caption("All Customers")
+Gui.F_PreProc.chkCust.Event(Click,CheckboxClick)
+Gui.F_PreProc.lbl6.Create(Label,"From:",True,1935,255,0,525,555,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl7.Create(Label,"To:",True,1935,255,0,2670,540,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl8.Create(Label,"From:",True,525,255,0,525,2100,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl9.Create(Label,"To:",True,315,255,0,3165,2100,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl10.Create(Label,"From:",True,525,255,0,525,3300,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl11.Create(Label,"To:",True,525,255,0,3165,3300,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl12.Create(Label,"From:",True,525,255,0,525,4500,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl13.Create(Label,"To:",True,315,255,0,3165,4500,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl14.Create(Label,"From:",True,525,255,0,525,5700,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl15.Create(Label,"To:",True,315,255,0,3165,5700,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lbl16.Create(Label,"GCG_6355_SA_BY_CUST.g2u",True,2415,255,0,75,7290,True,0,"Arial",6,-2147483633,0)
+Gui.F_PreProc.chkDetail.Create(CheckBox)
+Gui.F_PreProc.chkDetail.Size(1830,360)
+Gui.F_PreProc.chkDetail.Position(540,6480)
+Gui.F_PreProc.chkDetail.Caption("Print Detail")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Customer: Simpson
+'Developer: FEQ (Sisco)
+'Date: 05/17/2021
+'This is a preprocessor for teh Sales Analysis by Customer for Four different date ranges.
+'This is one of three preprocessors. All are similar but sort and group the data by different parameter.
+'The ony thing in this that makes the program 'only usable for Simpson' is the names of the columns that they asked for in both the parameter screen and the report column titles.
+'This program uses custom table GCG_6355_SA_BY_CUST as teh BI table that the Crystal Report GCG_6355_SA_By_Cust.rpt will use.
+
+Gui.F_PreProc..Show
+
+Program.Sub.Main.End
+
+Program.Sub.Error.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String, "")
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Args.Subroutine, V.Args.ErrorNo, V.Args.ErrorDesc, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.UI.Msgbox(V.Local.sError, "CRITICAL ERROR")
+
+F.Intrinsic.Control.CallSub(Unload)
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Error.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.CustomerBrowser.Start
+F.Intrinsic.Control.Try
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.lWidths.Declare(Long)
+
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.String.Split("Customer*!*Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*4000","*!*",V.Local.lWidths)
+
+F.Intrinsic.UI.MiniBrowser("Customer","conx","select distinct CUSTOMER, NAME_CUSTOMER from V_CUSTOMER_MASTER order by CUSTOMER",V.Local.sTitles,V.Local.lWidths,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDFROMCUST")
+		Gui.F_PreProc.txtFromCust.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDTOCUST")
+		Gui.F_PreProc.txtToCust.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error, "Subroutine", V.Ambient.CurrentSubroutine, "ErrorNo", V.Ambient.ErrorNumber, "ErrorDesc", V.Ambient.ErrorDescription)
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.EndTry
+Program.Sub.CustomerBrowser.End
+
+Program.Sub.CheckboxClick.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!chkCust.Value, =, "1")
+	'Lock the customer controls
+	Gui.F_PreProc.txtFromCust.Enabled(False)
+	Gui.F_PreProc.cmdFromCust.Enabled(False)
+	Gui.F_PreProc.txtToCust.Enabled(False)
+	Gui.F_PreProc.cmdToCust.Enabled(False)
+F.Intrinsic.Control.Else
+	'Unlock the customer controls
+	Gui.F_PreProc.txtFromCust.Enabled(True)
+	Gui.F_PreProc.cmdFromCust.Enabled(True)
+	Gui.F_PreProc.txtToCust.Enabled(True)
+	Gui.F_PreProc.cmdToCust.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error, "Subroutine", V.Ambient.CurrentSubroutine, "ErrorNo", V.Ambient.ErrorNumber, "ErrorDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckboxClick.End
+
+Program.Sub.OkieDokie.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(VerifyInput)
+
+F.Intrinsic.Control.If(V.Args.CHECK, =, "F")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(ProcessData)
+
+F.Intrinsic.Control.CallSub(Unload)
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error, "Subroutine", V.Ambient.CurrentSubroutine, "ErrorNo", V.Ambient.ErrorNumber, "ErrorDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndTry
+Program.Sub.OkieDokie.End
+
+Program.Sub.VerifyInput.Start
+F.Intrinsic.Control.Try
+
+'If checkbox for all customers is not checked, verify that the to and from customer textboxes are filled in and in appropriate order
+F.Intrinsic.Control.If(V.Screen.F_PreProc!chkCust.Value, =, "0")
+	F.Intrinsic.Control.If(V.Screen.F_PreProc!txtFromCust.Text, >, V.Screen.F_PreProc!txtToCust.Text)
+		'Notify user of erroneous information
+		F.Intrinsic.UI.Msgbox("Please verify the customer range selected", "Error in customer range input")
+		F.Intrinsic.Variable.AddRV("CHECK", "F")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Do the same with the dates
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtp1From.Value, >, V.Screen.F_PreProc!dtp1To.Value)
+	'Notify user of erroneous information
+	F.Intrinsic.UI.Msgbox("Please verify the date ranges selected", "Error in date range input")
+	F.Intrinsic.Variable.AddRV("CHECK", "F")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtp2From.Value, >, V.Screen.F_PreProc!dtp2To.Value)
+	'Notify user of erroneous information
+	F.Intrinsic.UI.Msgbox("Please verify the date ranges selected", "Error in date range input")
+	F.Intrinsic.Variable.AddRV("CHECK", "F")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtp3From.Value, >, V.Screen.F_PreProc!dtp3To.Value)
+	'Notify user of erroneous information
+	F.Intrinsic.UI.Msgbox("Please verify the date ranges selected", "Error in date range input")
+	F.Intrinsic.Variable.AddRV("CHECK", "F")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtp4From.Value, >, V.Screen.F_PreProc!dtp4To.Value)
+	'Notify user of erroneous information
+	F.Intrinsic.UI.Msgbox("Please verify the date ranges selected", "Error in date range input")
+	F.Intrinsic.Variable.AddRV("CHECK", "F")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.AddRV("CHECK", "")
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error, "Subroutine", V.Ambient.CurrentSubroutine, "ErrorNo", V.Ambient.ErrorNumber, "ErrorDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Variable.AddRV("CHECK", "F")
+F.Intrinsic.Control.EndTry
+Program.Sub.VerifyInput.End
+
+Program.Sub.ProcessData.Start
+F.Intrinsic.Control.Try
+V.Local.sSql.Declare(String, "")
+V.Local.sCustRange.Declare(String, "")
+V.Local.sParams.Declare(String, "")
+V.Local.sBegCust.Declare(String, "")
+V.Local.sEndCust.Declare(String, "")
+V.Local.sSummary.Declare(String, "")
+V.Local.sValues.Declare(String, "")
+V.Local.iBiRunID.Declare(Long, 0)
+V.Local.iReportID.Declare(Long, 0)
+V.Local.iLogID.Declare(Long, 0)
+V.Local.iReturn.Declare(Long, 0)
+V.Local.d1From.Declare(Date, "01/01/1900")
+V.Local.d1To.Declare(Date, "01/01/1900")
+V.Local.d2From.Declare(Date, "01/01/1900")
+V.Local.d2To.Declare(Date, "01/01/1900")
+V.Local.d3From.Declare(Date, "01/01/1900")
+V.Local.d3To.Declare(Date, "01/01/1900")
+V.Local.d4From.Declare(Date, "01/01/1900")
+V.Local.d4To.Declare(Date, "01/01/1900")
+
+'Hide form
+Gui.F_PreProc..Visible(False)
+
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.UI.InvokeWaitDialog("Initiating data gathering.", "PROCESSING DATA")
+
+'Prepare the report stuff
+F.Intrinsic.Control.If(V.Screen.F_PreProc!chkCust.Value, =, "0")
+	F.Intrinsic.String.Build("and (CUSTOMER between '{0}' and '{1}')", V.Screen.F_PreProc!txtFromCust.Text, V.Screen.F_PreProc!txtToCust.Text, V.Local.sCustRange)
+	
+F.Intrinsic.Control.Else
+	V.Local.sCustRange.Set("")
+	
+F.Intrinsic.Control.EndIf
+
+V.Local.d1From.Set(V.Screen.F_PreProc!dtp1From.Value)
+V.Local.d1To.Set(V.Screen.F_PreProc!dtp1To.Value)
+V.Local.d2From.Set(V.Screen.F_PreProc!dtp2From.Value)
+V.Local.d2To.Set(V.Screen.F_PreProc!dtp2To.Value)
+V.Local.d3From.Set(V.Screen.F_PreProc!dtp3From.Value)
+V.Local.d3To.Set(V.Screen.F_PreProc!dtp3To.Value)
+V.Local.d4From.Set(V.Screen.F_PreProc!dtp4From.Value)
+V.Local.d4To.Set(V.Screen.F_PreProc!dtp4To.Value)
+
+'Delete rows associated to current user in teh BI table
+F.Intrinsic.String.Build("Delete from GCG_6355_SA_BY_CUST where TERMINAL_NO = '{0}'", V.Caller.Terminal, V.Local.sSql)
+F.ODBC.Connection!conx.Execute(V.Local.sSql)
+
+'Initiate report recording
+F.Global.BI.GetRunID(V.Local.iBIRunID)
+
+F.Global.BI.GetIDFromName("GCG_6355_SA_BY_Customer.rpt", V.Local.iReportID)
+
+F.Global.BI.StartLogging(V.Local.iBIRunID, V.Local.iReportID, 0, "", V.Local.iLogID)
+
+'Create base table by querying datatable
+F.Intrinsic.String.Build("Select TERMINAL_NO, BI_RUN_ID, REPT_ID, ORDER_NO, ORDER_LINE, PART, DESCRIPTION, PRODUCT_LINE, PL_DESCR, SALESPERSON, REP_NAME, CUSTOMER, CUST_NAME, SIC, PTD_QTY, PTD_COST, PTD_SALES, PTD_DT_FROM, PTD_DT_TO, YPTD_QTY, YPTD_COST, YPTD_SALES, YPTD_DT_FROM, YPTD_DT_TO, PYPTD_QTY, PYPTD_COST, PYPTD_SALES, PYPTD_DT_FROM, PYPTD_DT_TO, PYYPTD_QTY, PYYPTD_COST, PYYPTD_SALES, PYYPTD_DT_FROM, PYYPTD_DT_TO from GCG_6355_SA_BY_CUST where TERMINAL_NO = '{0}'", V.Caller.Terminal, V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("dtMain", "conx", V.Local.sSql, True)
+
+F.Data.DataTable.AddColumn("dtMain", "TEMP_COST", "Float")
+
+F.Intrinsic.UI.ChangeWaitStatus("Gathering data for first date range")
+'PTD_QTY, PTD_COST, PTD_SALES, YPTD_QTY, YPTD_COST, YPTD_SALES, PYPTD_QTY, PYPTD_COST, PYPTD_SALES, PYYPTD_QTY, PYYPTD_COST, PYYPTD_SALES
+'Query data from hist tables
+'We are going to query all of the data for the first date range
+F.Intrinsic.String.Build("Select  ORDER_NO, ORDER_LINE, PART, DESCRIPTION, PRODUCT_LINE, SALESPERSON, RTRIM(LTRIM(CUSTOMER)) as CUSTOMER, QTY_SHIPPED as PTD_QTY, COST as TEMP_COST, EXTENSION as PTD_SALES, '0' as YPTD_QTY, '0' as YPTD_COST, '0' as YPTD_SALES, '0' as PYPTD_QTY, '0' as PYPTD_COST, '0' as PYPTD_SALES, '0' as PYYPTD_QTY, '0' as PYYPTD_COST, '0' as PYYPTD_SALES from V_ORDER_HIST_LINE where ORDER_LINE <> '8000' and (DATE_INVOICE between '{0}' and '{1}') {2}", V.Local.d1From.PervasiveDate, V.Local.d1To.PervasiveDate, V.Local.sCustRange, V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("dtFirst", "conx", V.Local.sSql, True)
+
+F.Data.DataTable.AddExpressionColumn("dtFirst", "PTD_COST", "Float", "[PTD_QTY] * [TEMP_COST]")
+
+F.Data.DataTable.Merge("dtFirst", "dtMain", True, 2)
+
+F.Data.DataTable.Close("dtFirst")
+
+F.Intrinsic.UI.ChangeWaitStatus("Gathering data for second date range")
+
+F.Intrinsic.String.Build("Select  ORDER_NO, ORDER_LINE, PART, DESCRIPTION, PRODUCT_LINE, SALESPERSON, RTRIM(LTRIM(CUSTOMER)) as CUSTOMER, QTY_SHIPPED as YPTD_QTY, COST as TEMP_COST, EXTENSION as YPTD_SALES, '0' as PTD_QTY, '0' as PTD_COST, '0' as PTD_SALES, '0' as PYPTD_QTY, '0' as PYPTD_COST, '0' as PYPTD_SALES, '0' as PYYPTD_QTY, '0' as PYYPTD_COST, '0' as PYYPTD_SALES from V_ORDER_HIST_LINE where ORDER_LINE <> '8000' and (DATE_INVOICE between '{0}' and '{1}') {2}", V.Local.d2From.PervasiveDate, V.Local.d2To.PervasiveDate, V.Local.sCustRange, V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("dtSecond", "conx", V.Local.sSql, True)
+
+F.Data.DataTable.AddExpressionColumn("dtSecond", "YPTD_COST", "Float", "[YPTD_QTY] * [TEMP_COST]")
+
+F.Data.DataTable.Merge("dtSecond", "dtMain", True, 2)
+
+F.Data.DataTable.Close("dtSecond")
+
+F.Intrinsic.UI.ChangeWaitStatus("Gathering data for third date range")
+
+F.Intrinsic.String.Build("Select  ORDER_NO, ORDER_LINE, PART, DESCRIPTION, PRODUCT_LINE, SALESPERSON, RTRIM(LTRIM(CUSTOMER)) as CUSTOMER, QTY_SHIPPED as PYPTD_QTY, COST as TEMP_COST, EXTENSION as PYPTD_SALES, '0' as PTD_QTY, '0' as PTD_COST, '0' as PTD_SALES, '0' as YPTD_QTY, '0' as YPTD_COST, '0' as YPTD_SALES, '0' as PYYPTD_QTY, '0' as PYYPTD_COST, '0' as PYYPTD_SALES from V_ORDER_HIST_LINE where ORDER_LINE <> '8000' and (DATE_INVOICE between '{0}' and '{1}') {2}", V.Local.d3From.PervasiveDate, V.Local.d3To.PervasiveDate, V.Local.sCustRange, V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("dtThird", "conx", V.Local.sSql, True)
+
+F.Data.DataTable.AddExpressionColumn("dtThird", "PYPTD_COST", "Float", "[PYPTD_QTY] * [TEMP_COST]")
+
+F.Data.DataTable.Merge("dtThird", "dtMain", True, 2)
+
+F.Data.DataTable.Close("dtThird")
+
+F.Intrinsic.UI.ChangeWaitStatus("Gathering data for fourth date range")
+
+F.Intrinsic.String.Build("Select  ORDER_NO, ORDER_LINE, PART, DESCRIPTION, PRODUCT_LINE, SALESPERSON, RTRIM(LTRIM(CUSTOMER)) as CUSTOMER, QTY_SHIPPED as PYYPTD_QTY, COST as TEMP_COST, EXTENSION as PYYPTD_SALES, '0' as PTD_QTY, '0' as PTD_COST, '0' as PTD_SALES, '0' as YPTD_QTY, '0' as YPTD_COST, '0' as YPTD_SALES, '0' as PYPTD_QTY, '0' as PYPTD_COST, '0' as PYPTD_SALES from V_ORDER_HIST_LINE where ORDER_LINE <> '8000' and (DATE_INVOICE between '{0}' and '{1}') {2}", V.Local.d4From.PervasiveDate, V.Local.d4To.PervasiveDate, V.Local.sCustRange, V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("dtFourth", "conx", V.Local.sSql, True)
+
+F.Data.DataTable.AddExpressionColumn("dtFourth", "PYYPTD_COST", "Float", "[PYYPTD_QTY] * [TEMP_COST]")
+
+F.Data.DataTable.Merge("dtFourth", "dtMain", True, 2)
+
+F.Data.DataTable.Close("dtFourth")
+
+'Verify that there is data to report
+F.Intrinsic.Control.If(V.DataTable.dtMain.RowCount, =, 0)
+	F.Intrinsic.UI.Msgbox("The program could not find data to populate for the selected parameters", "NO DATA")
+	F.ODBC.Connection!conx.Close
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.ChangeWaitStatus("Adding miscellaneous information")
+
+F.Data.DataTable.RemoveColumn("dtMain", "TEMP_COST")
+
+'Now all the data we have in the table is filled in, we just need to fill the misc stuff in.
+F.Data.DataTable.SetValue("dtMain", -1, "TERMINAL_NO", V.Caller.Terminal, "BI_RUN_ID", V.Local.iBiRunID, "REPT_ID", V.Local.iReportID, "PTD_DT_FROM", V.Local.d1From.PSQLFriendly, "PTD_DT_TO", V.Local.d1To.PSQLFriendly, "YPTD_DT_FROM", V.Local.d2From.PSQLFriendly, "YPTD_DT_TO", V.Local.d2To.PSQLFriendly, "PYPTD_DT_FROM", V.Local.d3From.PSQLFriendly, "PYPTD_DT_TO", V.Local.d3To.PSQLFriendly, "PYYPTD_DT_FROM", V.Local.d4From.PSQLFriendly, "PYYPTD_DT_TO", V.Local.d4To.PSQLFriendly)
+
+F.Data.Dictionary.CreateFromSQL("dicCust", "conx", "select RTRIM(LTRIM(CUSTOMER)) as CUSTOMER, NAME_CUSTOMER from V_CUSTOMER_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dicCust", "")
+
+F.Data.DataTable.FillFromDictionary("dtMain", "dicCust", "CUSTOMER", "CUST_NAME")
+
+F.Data.Dictionary.Close("dicCust")
+
+'Fix the number columns that would be empty otherwise..
+'F.Data.DataView.Create("dtMain", "dv1zeros", 22, "[PTD_QTY] = ''", "")
+'F.Data.DataView.SetValue("dtMain", "dv1zeros", -1, "PTD_QTY", 0, "PTD_COST", 0, "PTD_SALES", 0)
+'F.Data.DataView.Close("dtMain", "dv1zeros")
+
+'F.Data.DataView.Create("dtMain", "dv2zeros", 22, "[YPTD_QTY] = ''", "")
+'F.Data.DataView.SetValue("dtMain", "dv2zeros", -1, "YPTD_QTY", 0, "YPTD_COST", 0, "YPTD_SALES", 0)
+'F.Data.DataView.Close("dtMain", "dv2zeros")
+
+'F.Data.DataView.Create("dtMain", "dv3zeros", 22, "[PYPTD_QTY] = ''", "")
+'F.Data.DataView.SetValue("dtMain", "dv3zeros", -1, "PYPTD_QTY", 0, "PYPTD_COST", 0, "PYPTD_SALES", 0)
+'F.Data.DataView.Close("dtMain", "dv3zeros")
+
+'F.Data.DataView.Create("dtMain", "dv4zeros", 22, "[PYYPTD_QTY] = ''", "")
+'F.Data.DataView.SetValue("dtMain", "dv4zeros", -1, "PYYPTD_QTY", 0, "PYYPTD_COST", 0, "PYYPTD_SALES", 0)
+'F.Data.DataView.Close("dtMain", "dv4zeros")
+
+F.Intrinsic.UI.ChangeWaitStatus("Saving information into database")
+
+'Save Information to BI table and close connection
+F.Data.DataTable.SaveToDB("dtMain", "conx", "GCG_6355_SA_BY_CUST", "", 128)
+
+F.Data.DataTable.Close("dtMain")
+
+F.ODBC.Connection!conx.Close
+
+'Print Report
+F.Intrinsic.Control.If(V.Screen.F_PreProc!chkCust.Value, =, "1")
+	V.Local.sBegCust.Set("ALL")
+	V.Local.sEndCust.Set("")
+F.Intrinsic.Control.Else
+	V.Local.sBegCust.Set(V.Screen.F_PreProc!txtFromCust.Text)
+	V.Local.sEndCust.Set(V.Screen.F_PreProc!txtToCust.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!chkDetail.Value, =, "1")
+	V.Local.sSummary.Set("Y")
+F.Intrinsic.Control.Else
+	V.Local.sSummary.Set("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.ChangeWaitStatus("Printing report")
+Function.Intrinsic.Debug.Stop
+
+'F.Intrinsic.String.Split("TERMINAL_NO*!*BEGCUST*!*ENDCUST*!*SUMMARY","*!*",V.Local.sParams)
+V.Local.sParams.Set("TERMINAL_NO*!*BEGCUST*!*ENDCUST*!*SUMMARY")
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}", V.Caller.Terminal, V.Local.sBegCust, V.Local.sEndCust, V.Local.sSummary, V.Local.sValues)
+'F.Intrinsic.String.Split(V.Local.sValues, "*!*", V.Local.sValues)
+
+F.Global.BI.StopLogging(V.Local.iLogID)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Global.BI.RunReportPreProcessor(V.Local.iBIRunID, V.Local.iLogID, V.Local.sParams, V.Local.sValues, "", -1, True, "", -1, "", -1, "", "", V.Local.iReturn)
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error, "Subroutine", V.Ambient.CurrentSubroutine, "ErrorNo", V.Ambient.ErrorNumber, "ErrorDesc", V.Ambient.ErrorDescription)
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndTry
+Program.Sub.ProcessData.End
